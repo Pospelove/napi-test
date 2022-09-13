@@ -1,0 +1,16 @@
+cmake_minimum_required(VERSION 3.22)
+
+set(CMAKE_TOOLCHAIN_FILE "C:/projects/vcpkg/scripts/buildsystems/vcpkg.cmake" CACHE STRING "Vcpkg toolchain file")
+
+project(napi_test)
+
+add_library(test SHARED addon.c addon_node.c addon.h)
+
+# set extenson to .node
+set_target_properties(test PROPERTIES SUFFIX ".node")
+
+# find unofficial node-api package
+find_package(node-api CONFIG REQUIRED)
+
+# link to unofficial node-api package
+target_link_libraries(test PRIVATE node_api)
