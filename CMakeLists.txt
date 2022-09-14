@@ -12,5 +12,7 @@ set_target_properties(test PROPERTIES SUFFIX ".node")
 # find unofficial node-api package
 find_package(node-api CONFIG REQUIRED)
 
+message("node-api_INCLUDE_DIR = ${node-api_INCLUDE_DIR}")
+
 # link to unofficial node-api package
-target_link_libraries(test PRIVATE node_api)
+target_link_libraries(test PRIVATE unofficial::node-api::node-api)
