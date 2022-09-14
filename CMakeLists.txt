@@ -10,7 +10,7 @@ add_library(test SHARED addon.c addon_node.c addon.h)
 set_target_properties(test PROPERTIES SUFFIX ".node")
 
 # find unofficial node-api package
-find_package(node-api CONFIG REQUIRED)
+find_package(unofficial-node-api CONFIG REQUIRED)
 
 message("node-api_INCLUDE_DIR = ${node-api_INCLUDE_DIR}")
 
