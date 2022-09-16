@@ -1,6 +1,10 @@
 cmake_minimum_required(VERSION 3.22)
 
-set(CMAKE_TOOLCHAIN_FILE "C:/projects/vcpkg/scripts/buildsystems/vcpkg.cmake" CACHE STRING "Vcpkg toolchain file")
+if(WIN32)
+  set(CMAKE_TOOLCHAIN_FILE "C:/projects/vcpkg/scripts/buildsystems/vcpkg.cmake" CACHE STRING "Vcpkg toolchain file")
+else()
+  set(CMAKE_TOOLCHAIN_FILE "/usr/src/vcpkg/scripts/buildsystems/vcpkg.cmake" CACHE STRING "Vcpkg toolchain file")
+endif()
 
 project(napi_test)
 
