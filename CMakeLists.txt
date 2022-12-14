@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.22)
 
 if(WIN32)
   set(CMAKE_TOOLCHAIN_FILE "C:/projects/vcpkg/scripts/buildsystems/vcpkg.cmake" CACHE STRING "Vcpkg toolchain file")
+elseif(APPLE)
+  set(CMAKE_TOOLCHAIN_FILE "/Users/leonidpospelov/projects/vcpkg/scripts/buildsystems/vcpkg.cmake" CACHE STRING "Vcpkg toolchain file")
 else()
   set(CMAKE_TOOLCHAIN_FILE "/usr/src/vcpkg/scripts/buildsystems/vcpkg.cmake" CACHE STRING "Vcpkg toolchain file")
 endif()
