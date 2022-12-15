@@ -1,5 +1,7 @@
 const testAddon = (binaryDir) => {
-  const testAddon = require("./" + binaryDir + "/Debug/test.node");
+  const winRequirePath = "./" + binaryDir + "/Debug/test.node";
+  const linuxRequirePath = "./" + binaryDir + "/test.node";
+  const testAddon = require(process.platform === "win32" ? winRequirePath : linuxRequirePath);
 
   console.log({ function: testAddon.doSomethingUseful });
 
@@ -10,4 +12,4 @@ const testAddon = (binaryDir) => {
 
 // One of them should fail cause you can't have x86 and x64 nodejs in same time
 testAddon('build');
-testAddon('build32');
+//testAddon('build32');

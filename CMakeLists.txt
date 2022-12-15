@@ -13,7 +13,7 @@ project(napi_test)
 add_library(test SHARED addon.c addon_node.c addon.h)
 
 # set extenson to .node
-set_target_properties(test PROPERTIES SUFFIX ".node")
+set_target_properties(test PROPERTIES SUFFIX ".node" PREFIX "")
 
 # find unofficial node-api package
 find_package(unofficial-node-api CONFIG REQUIRED)
