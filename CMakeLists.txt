@@ -15,10 +15,10 @@ add_library(test SHARED addon.c addon_node.c addon.h)
 # set extenson to .node
 set_target_properties(test PROPERTIES SUFFIX ".node" PREFIX "")
 
-# find unofficial node-api package
-find_package(unofficial-node-api CONFIG REQUIRED)
+# find unofficial node-api-headers package
+find_package(unofficial-node-api-headers CONFIG REQUIRED)
 
-message("node-api_INCLUDE_DIR = ${node-api_INCLUDE_DIR}")
+message("node-api-headers_INCLUDE_DIR = ${node-api-headers_INCLUDE_DIR}")
 
-# link to unofficial node-api package
-target_link_libraries(test PRIVATE unofficial::node-api::node-api)
+# link to unofficial node-api-headers package
+target_link_libraries(test PRIVATE unofficial::node-api-headers::node-api-headers)

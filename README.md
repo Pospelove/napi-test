@@ -11,6 +11,12 @@ docker build -t napitest .
 docker run --rm napitest
 ```
 
+### testing in case you built locally without docker
+    
+```
+node index.js
+```
+
 ### expected result
 ```
 { function: [Function: doSomethingUseful] }
